@@ -15,7 +15,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Node',
+      title: 'Nodelink',
       theme: ThemeData(
         canvasColor: Color.fromARGB(255, 24, 24, 24),
         fontFamily: 'Raleway',

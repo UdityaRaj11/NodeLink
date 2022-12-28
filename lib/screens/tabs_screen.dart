@@ -38,7 +38,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_pages[_selectedPageIndex]['title']),
+        title: Text('NodeLink'),
         backgroundColor: Color.fromARGB(255, 29, 29, 29),
         actions: <Widget>[
           Padding(

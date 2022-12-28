@@ -1,3 +1,4 @@
+import 'package:Node/screens/profiles_detail_screen.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 
@@ -29,87 +30,111 @@ class NotificationScreen extends StatelessWidget {
               ),
             ),
           ),
-          Card(
-            color: Color.fromARGB(255, 29, 29, 29),
-            elevation: 7,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Image.asset(DUMMY_PROFILES[1].image),
-                  title: Text(
-                    'Baibhav',
-                    style: TextStyle(color: Colors.white),
+          InkWell(
+            child: Card(
+              color: Color.fromARGB(255, 29, 29, 29),
+              elevation: 7,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    leading: Image.asset(DUMMY_PROFILES[1].image),
+                    title: Text(
+                      'Baibhav',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text('Sent you a link Request.',
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 166, 166, 166))),
                   ),
-                  subtitle: Text('Sent you a link Request.',
-                      style:
-                          TextStyle(color: Color.fromARGB(255, 166, 166, 166))),
-                ),
-              ],
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, ProfileDetailScreen.routeName,
+                  arguments: DUMMY_PROFILES[1].id);
+            },
           ),
-          Card(
-            color: Color.fromARGB(255, 29, 29, 29),
-            elevation: 7,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Image.asset(DUMMY_PROFILES[2].image),
-                  title: Text(
-                    'Abhi',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    'Offered you a Handshake!',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 166, 166, 166),
+          InkWell(
+            child: Card(
+              color: Color.fromARGB(255, 29, 29, 29),
+              elevation: 7,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    leading: Image.asset(DUMMY_PROFILES[2].image),
+                    title: Text(
+                      'Abhi',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      'Offered you a Handshake!',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 166, 166, 166),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, ProfileDetailScreen.routeName,
+                  arguments: DUMMY_PROFILES[2].id);
+            },
           ),
-          Card(
-            color: Color.fromARGB(255, 29, 29, 29),
-            elevation: 7,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Image.asset(DUMMY_PROFILES[0].image),
-                  title: Text(
-                    'Omkar',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    'One of the Most Suited Node present near you.',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 166, 166, 166),
+          InkWell(
+            child: Card(
+              color: Color.fromARGB(255, 29, 29, 29),
+              elevation: 7,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    leading: Image.asset(DUMMY_PROFILES[0].image),
+                    title: Text(
+                      'Omkar',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      'One of the Most Suited Node present near you.',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 166, 166, 166),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, ProfileDetailScreen.routeName,
+                  arguments: DUMMY_PROFILES[0].id);
+            },
           ),
-          Card(
-            color: Color.fromARGB(255, 29, 29, 29),
-            elevation: 7,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: Image.asset(DUMMY_PROFILES[4].image),
-                  title: Text('Ankit', style: TextStyle(color: Colors.white)),
-                  subtitle: Text(
-                    'Accepted your Link Request.',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 166, 166, 166),
+          InkWell(
+            child: Card(
+              color: Color.fromARGB(255, 29, 29, 29),
+              elevation: 7,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ListTile(
+                    leading: Image.asset(DUMMY_PROFILES[4].image),
+                    title: Text('Ankit', style: TextStyle(color: Colors.white)),
+                    subtitle: Text(
+                      'Accepted your Link Request.',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 166, 166, 166),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, ProfileDetailScreen.routeName,
+                  arguments: DUMMY_PROFILES[4].id);
+            },
           ),
         ],
       ),

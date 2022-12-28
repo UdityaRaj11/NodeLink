@@ -149,6 +149,7 @@ class ProfileDetailScreen extends StatelessWidget {
                         'Link',
                         style: TextStyle(color: Colors.white),
                       ),
+                      onPressed: () {},
                     )),
                 Positioned(
                     bottom: size * 8,
@@ -163,6 +164,7 @@ class ProfileDetailScreen extends StatelessWidget {
                         style:
                             TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
                       ),
+                      onPressed: () {},
                     )),
               ],
             ),

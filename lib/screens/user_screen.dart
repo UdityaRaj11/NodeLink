@@ -24,36 +24,68 @@ class UserProfile extends StatelessWidget {
                   child: Card(
                     color: Color.fromARGB(255, 29, 29, 29),
                     elevation: 7,
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: size * 70),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(selectedProfile.coverimage),
-                            opacity: 100,
-                            fit: BoxFit.cover),
-                      ),
-                      height: size * 50,
-                      width: double.infinity,
-                      child: Text(''),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: size * 70),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(selectedProfile.coverimage),
+                                  opacity: 100,
+                                  fit: BoxFit.cover),
+                            ),
+                            height: size * 80,
+                            width: double.infinity,
+                            child: Text(''),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: size * 75,
+                          right: size * 5,
+                          child: InkWell(
+                            child: Icon(
+                              Icons.edit,
+                              color: Color.fromARGB(255, 226, 226, 226),
+                            ),
+                            onTap: () {},
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 Positioned(
                   bottom: size * 55,
                   left: size * 5,
-                  child: Container(
-                    height: size * 35,
-                    width: size * 35,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(4),
-                        topRight: Radius.circular(4),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: size * 35,
+                        width: size * 35,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(4),
+                            topRight: Radius.circular(4),
+                          ),
+                          child: Image.asset(
+                            selectedProfile.image,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                      child: Image.asset(
-                        selectedProfile.image,
-                        fit: BoxFit.cover,
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: InkWell(
+                          child: Icon(
+                            Icons.edit,
+                            color: Color.fromARGB(255, 226, 226, 226),
+                          ),
+                          onTap: () {},
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
                 Positioned(
@@ -112,32 +144,54 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                    bottom: size * 8,
-                    left: size * 10,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          elevation: MaterialStateProperty.all(7),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.green)),
-                      child: Text(
-                        'Linked Nodes',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    )),
+                  bottom: size * 8,
+                  left: size * 10,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.green)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '100',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255)),
+                        ),
+                        Text(
+                          'Linked Nodes',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
                 Positioned(
-                    bottom: size * 8,
-                    left: size * 65,
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                            color: Color.fromARGB(255, 75, 75, 75), width: 2),
-                      ),
-                      child: Text(
-                        'Link Requests',
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
-                      ),
-                    )),
+                  bottom: size * 8,
+                  left: size * 65,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(
+                          color: Color.fromARGB(255, 75, 75, 75), width: 2),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          '10',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 68, 157, 71)),
+                        ),
+                        Text(
+                          'Link Requests',
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
               ],
             ),
             Container(
@@ -153,12 +207,29 @@ class UserProfile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        "About",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 240, 240, 240),
-                            fontSize: textsize * 15,
-                            fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            "About",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 240, 240, 240),
+                                fontSize: textsize * 15,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: size * 80,
+                          ),
+                          InkWell(
+                            child: Text(
+                              "Edit",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 113, 113, 113),
+                                  fontSize: textsize * 11,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 12,
@@ -187,12 +258,29 @@ class UserProfile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        "Skills",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 240, 240, 240),
-                            fontSize: textsize * 15,
-                            fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            "Skills",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 240, 240, 240),
+                                fontSize: textsize * 15,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: size * 80,
+                          ),
+                          InkWell(
+                            child: Text(
+                              "Edit",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 113, 113, 113),
+                                  fontSize: textsize * 11,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 12,
@@ -299,12 +387,29 @@ class UserProfile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        "Interests",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 240, 240, 240),
-                            fontSize: textsize * 15,
-                            fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            "Interests",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 240, 240, 240),
+                                fontSize: textsize * 15,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: size * 70,
+                          ),
+                          InkWell(
+                            child: Text(
+                              "Edit",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 113, 113, 113),
+                                  fontSize: textsize * 11,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 12,

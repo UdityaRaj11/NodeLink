@@ -113,7 +113,28 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        buildSectionTitle(context, 'Preferred Nodes'),
+                        Row(
+                          children: [
+                            buildSectionTitle(context, 'Preferred Nodes'),
+                            SizedBox(
+                              width: size * 30,
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    color: Color.fromARGB(255, 75, 75, 75),
+                                    width: 2),
+                              ),
+                              child: Text(
+                                'See all',
+                                style: TextStyle(
+                                    fontSize: mediaQuery.textScaleFactor * 10,
+                                    color: Color.fromARGB(255, 75, 75, 75)),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
                         buildContainer(
                           context,
                           ListView.builder(
@@ -132,7 +153,28 @@ class HomeScreen extends StatelessWidget {
                             itemCount: DUMMY_PROFILES.length,
                           ),
                         ),
-                        buildSectionTitle(context, 'Nearby Nodes'),
+                        Row(
+                          children: [
+                            buildSectionTitle(context, 'Nearby Nodes'),
+                            SizedBox(
+                              width: size * 35,
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    color: Color.fromARGB(255, 75, 75, 75),
+                                    width: 2),
+                              ),
+                              child: Text(
+                                'See all',
+                                style: TextStyle(
+                                    fontSize: mediaQuery.textScaleFactor * 10,
+                                    color: Color.fromARGB(255, 75, 75, 75)),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
                         buildImageProfile(
                           context,
                           ListView.builder(
