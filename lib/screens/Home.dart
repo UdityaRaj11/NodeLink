@@ -138,6 +138,11 @@ class HomeScreen extends StatelessWidget {
                           ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (ctx, index) => InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, ProfileDetailScreen.routeName,
+                                    arguments: DUMMY_PROFILES[index].id);
+                              },
                               child: Card(
                                 elevation: 0,
                                 color: Colors.transparent,

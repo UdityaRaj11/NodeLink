@@ -2,7 +2,6 @@ import 'package:Node/screens/user_screen.dart';
 import './screens/profiles_detail_screen.dart';
 import '/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
-import './model/meal.dart';
 
 void main() => runApp(MyApp());
 
