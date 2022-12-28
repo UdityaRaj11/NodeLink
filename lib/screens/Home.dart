@@ -117,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             buildSectionTitle(context, 'Preferred Nodes'),
                             SizedBox(
-                              width: size * 30,
+                              width: size * 33,
                             ),
                             OutlinedButton(
                               style: OutlinedButton.styleFrom(
@@ -157,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             buildSectionTitle(context, 'Nearby Nodes'),
                             SizedBox(
-                              width: size * 35,
+                              width: size * 40,
                             ),
                             OutlinedButton(
                               style: OutlinedButton.styleFrom(

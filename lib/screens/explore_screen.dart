@@ -191,8 +191,11 @@ class ExploreScreen extends StatelessWidget {
                                                     CrossAxisAlignment.start,
                                                 children: <Widget>[
                                                   TextButton(
-                                                    child:
-                                                        const Text('REGISTER'),
+                                                    child: const Text(
+                                                      'REGISTER',
+                                                      style: TextStyle(
+                                                          color: Colors.grey),
+                                                    ),
                                                     onPressed: () {},
                                                   ),
                                                   TextButton(
