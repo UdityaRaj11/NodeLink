@@ -1,4 +1,5 @@
 import 'package:Node/screens/profiles_detail_screen.dart';
+import 'package:Node/screens/user_screen.dart';
 
 import 'explore_screen.dart';
 import '../model/meal.dart';
@@ -8,9 +9,6 @@ import 'Home.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
-  final List<Meal> favoriteMeals;
-
-  TabsScreen(this.favoriteMeals);
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
@@ -43,9 +41,12 @@ class _TabsScreenState extends State<TabsScreen> {
         title: Text(_pages[_selectedPageIndex]['title']),
         backgroundColor: Color.fromARGB(255, 29, 29, 29),
         actions: <Widget>[
-          InkWell(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 15),
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, UserProfile.routeName);
+              },
               child: CircleAvatar(
                 radius: 18,
                 child: ClipOval(

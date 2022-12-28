@@ -137,6 +137,29 @@ const DUMMY_PROFILES = const [
       Interest5: 'chill'),
 ];
 
+const USER_PROFILE = MatchProfile(
+    id: 'p6',
+    title: 'Uditya R.',
+    image: 'assets/me.jpeg',
+    coverimage: 'assets/coder.jpg',
+    color: Color.fromARGB(255, 29, 29, 29),
+    Profession: 'Student',
+    Headline: 'Chill & Code | Developer life | Music Vibes',
+    Education: 'Siksha ${'O'} Anusandhan',
+    Country: 'India',
+    City: 'Bhubneshwar, Odisha',
+    about: 'Pro-gramer and a Pro-gamer with mind blowing reflexes.',
+    Skill1: 'Flutter',
+    Skill2: 'React.js',
+    Skill3: 'Java',
+    Skill4: 'Python',
+    Skill5: 'Figma',
+    Interest1: 'Tennis',
+    Interest2: 'Music',
+    Interest3: 'Dance',
+    Interest4: 'Games',
+    Interest5: 'chill');
+
 const DUMMY_EVENTS = const [
   Tree(
     image: 'assets/E1.jpg',

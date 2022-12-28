@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import '/dummy_data.dart';
+import 'package:Node/screens/user_screen.dart';
 import './screens/profiles_detail_screen.dart';
 import '/screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +12,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Meal> _favoriteMeals = [];
-
-  bool _isMealFavorite(String id) {
-    return _favoriteMeals.any((meal) => meal.id == id);
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,8 +36,9 @@ class _MyAppState extends State<MyApp> {
             ),
       ),
       routes: {
-        '/': (ctx) => TabsScreen(_favoriteMeals),
+        '/': (ctx) => TabsScreen(),
         ProfileDetailScreen.routeName: (ctx) => ProfileDetailScreen(),
+        UserProfile.routeName: (ctx) => UserProfile(),
       },
     );
   }
