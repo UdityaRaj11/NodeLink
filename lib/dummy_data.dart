@@ -143,12 +143,13 @@ const USER_PROFILE = MatchProfile(
     image: 'assets/me.jpeg',
     coverimage: 'assets/coder.jpg',
     color: Color.fromARGB(255, 29, 29, 29),
-    Profession: 'Student',
-    Headline: 'Chill & Code | Developer life | Music Vibes',
+    Profession: 'Developer',
+    Headline: 'Flutter | Ideas | Innovation | Start-up',
     Education: 'Siksha ${'O'} Anusandhan',
     Country: 'India',
     City: 'Bhubneshwar, Odisha',
-    about: 'Pro-gramer and a Pro-gamer with mind blowing reflexes.',
+    about:
+        'I am striving to overcome problems people face and provide great innovation solutions to them.',
     Skill1: 'Flutter',
     Skill2: 'React.js',
     Skill3: 'Java',
@@ -156,9 +157,9 @@ const USER_PROFILE = MatchProfile(
     Skill5: 'Figma',
     Interest1: 'Tennis',
     Interest2: 'Music',
-    Interest3: 'Dance',
-    Interest4: 'Games',
-    Interest5: 'chill');
+    Interest3: 'Learning',
+    Interest4: 'Books',
+    Interest5: 'Chill');
 
 const DUMMY_EVENTS = const [
   Tree(

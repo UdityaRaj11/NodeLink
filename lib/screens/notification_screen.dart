@@ -31,24 +31,66 @@ class NotificationScreen extends StatelessWidget {
             ),
           ),
           InkWell(
-            child: Card(
-              color: Color.fromARGB(255, 29, 29, 29),
-              elevation: 7,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ListTile(
-                    leading: Image.asset(DUMMY_PROFILES[1].image),
-                    title: Text(
-                      'Baibhav',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    subtitle: Text('Sent you a link Request.',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 166, 166, 166))),
+            child: Stack(
+              children: [
+                Card(
+                  color: Color.fromARGB(255, 29, 29, 29),
+                  elevation: 7,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        leading: Image.asset(DUMMY_PROFILES[1].image),
+                        title: Text(
+                          'Baibhav',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        subtitle: Text('Sent you a link Request.',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 166, 166, 166))),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Positioned(
+                  top: size * 0,
+                  right: size * 25,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.zero),
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.green)),
+                    child: Text(
+                      'Accept',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: mediaQuery.textScaleFactor * 10),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Positioned(
+                  top: size * 0,
+                  right: size * 2,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.zero),
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromARGB(255, 90, 90, 90))),
+                    child: Text(
+                      'Remove',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: mediaQuery.textScaleFactor * 10),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
             onTap: () {
               Navigator.pushNamed(context, ProfileDetailScreen.routeName,
@@ -56,27 +98,69 @@ class NotificationScreen extends StatelessWidget {
             },
           ),
           InkWell(
-            child: Card(
-              color: Color.fromARGB(255, 29, 29, 29),
-              elevation: 7,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ListTile(
-                    leading: Image.asset(DUMMY_PROFILES[2].image),
-                    title: Text(
-                      'Abhi',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    subtitle: Text(
-                      'Offered you a Handshake!',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 166, 166, 166),
+            child: Stack(
+              children: [
+                Card(
+                  color: Color.fromARGB(255, 29, 29, 29),
+                  elevation: 7,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        leading: Image.asset(DUMMY_PROFILES[2].image),
+                        title: Text(
+                          'Abhi',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        subtitle: Text(
+                          'Offered you a Handshake!',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 166, 166, 166),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Positioned(
+                  top: size * 0,
+                  right: size * 25,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.zero),
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.green)),
+                    child: Text(
+                      'Accept',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: mediaQuery.textScaleFactor * 10),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                Positioned(
+                  top: size * 0,
+                  right: size * 2,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.zero),
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromARGB(255, 90, 90, 90))),
+                    child: Text(
+                      'Remove',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: mediaQuery.textScaleFactor * 10),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
             onTap: () {
               Navigator.pushNamed(context, ProfileDetailScreen.routeName,
@@ -112,24 +196,48 @@ class NotificationScreen extends StatelessWidget {
             },
           ),
           InkWell(
-            child: Card(
-              color: Color.fromARGB(255, 29, 29, 29),
-              elevation: 7,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ListTile(
-                    leading: Image.asset(DUMMY_PROFILES[4].image),
-                    title: Text('Ankit', style: TextStyle(color: Colors.white)),
-                    subtitle: Text(
-                      'Accepted your Link Request.',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 166, 166, 166),
+            child: Stack(
+              children: [
+                Card(
+                  color: Color.fromARGB(255, 29, 29, 29),
+                  elevation: 7,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        leading: Image.asset(DUMMY_PROFILES[4].image),
+                        title: Text('Ankit',
+                            style: TextStyle(color: Colors.white)),
+                        subtitle: Text(
+                          'Accepted your Link Request.',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 166, 166, 166),
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                Positioned(
+                  top: size * 0,
+                  right: size * 2,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        padding: MaterialStateProperty.all<EdgeInsets>(
+                            EdgeInsets.zero),
+                        elevation: MaterialStateProperty.all(7),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromARGB(255, 90, 90, 90))),
+                    child: Text(
+                      'Message',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: mediaQuery.textScaleFactor * 10),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
             onTap: () {
               Navigator.pushNamed(context, ProfileDetailScreen.routeName,

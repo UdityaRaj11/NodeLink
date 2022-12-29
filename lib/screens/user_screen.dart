@@ -154,7 +154,7 @@ class UserProfile extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '100',
+                          '501',
                           style: TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255)),
                         ),
