@@ -1,4 +1,5 @@
 import 'package:Node/dummy_data.dart';
+import 'package:Node/screens/linked_nodes.dart';
 import 'package:flutter/material.dart';
 
 class UserProfile extends StatelessWidget {
@@ -164,7 +165,9 @@ class UserProfile extends StatelessWidget {
                         ),
                       ],
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, LinkedNodes.routeName);
+                    },
                   ),
                 ),
                 Positioned(
