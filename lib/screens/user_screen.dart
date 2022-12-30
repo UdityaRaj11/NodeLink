@@ -1,5 +1,6 @@
 import 'package:Node/dummy_data.dart';
-import 'package:Node/screens/linked_nodes.dart';
+import 'package:Node/screens/link_request_screen.dart';
+import 'package:Node/screens/linked_nodes_screen.dart';
 import 'package:flutter/material.dart';
 
 class UserProfile extends StatelessWidget {
@@ -155,7 +156,7 @@ class UserProfile extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '501',
+                          '${DUMMY_PROFILES.length - 1}',
                           style: TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255)),
                         ),
@@ -181,7 +182,7 @@ class UserProfile extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          '10',
+                          '1',
                           style: TextStyle(
                               color: Color.fromARGB(255, 68, 157, 71)),
                         ),
@@ -192,7 +193,10 @@ class UserProfile extends StatelessWidget {
                         ),
                       ],
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                          context, LinkRequestsScreen.routeName);
+                    },
                   ),
                 ),
               ],

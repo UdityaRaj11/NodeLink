@@ -1,4 +1,5 @@
-import 'package:Node/screens/linked_nodes.dart';
+import 'package:Node/screens/link_request_screen.dart';
+import 'package:Node/screens/linked_nodes_screen.dart';
 import 'package:Node/screens/user_screen.dart';
 import './screens/profiles_detail_screen.dart';
 import '/screens/tabs_screen.dart';
@@ -40,6 +41,7 @@ class _MyAppState extends State<MyApp> {
         ProfileDetailScreen.routeName: (ctx) => ProfileDetailScreen(),
         LinkedNodes.routeName: (ctx) => LinkedNodes(),
         UserProfile.routeName: (ctx) => UserProfile(),
+        LinkRequestsScreen.routeName: (ctx) => LinkRequestsScreen(),
       },
     );
   }

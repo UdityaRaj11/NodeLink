@@ -5,7 +5,7 @@ import 'explore_screen.dart';
 import '../model/meal.dart';
 import 'notification_screen.dart';
 import 'chats_screen.dart';
-import 'Home.dart';
+import 'nodes_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -18,8 +18,8 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-      {'page': HomeScreen(), 'title': 'Node'},
       {'page': ExploreScreen(), 'title': 'Node'},
+      {'page': HomeScreen(), 'title': 'Node'},
       {'page': NotificationScreen(), 'title': 'Node'},
       {'page': ChatsScreen(), 'title': 'Node'},
     ];

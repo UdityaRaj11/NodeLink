@@ -3,8 +3,8 @@ import 'package:Node/screens/user_screen.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 
-class LinkedNodes extends StatelessWidget {
-  static const routeName = '/linked-nodes';
+class LinkRequestsScreen extends StatelessWidget {
+  static const routeName = '/link-request-screen';
   Widget buildLinkedNodeCard(BuildContext context, Widget child) {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
@@ -24,7 +24,7 @@ class LinkedNodes extends StatelessWidget {
     final cardHeight = size * 100;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Linked Nodes'),
+        title: Text('Link Requests'),
         backgroundColor: Color.fromARGB(255, 29, 29, 29),
       ),
       body: SingleChildScrollView(
@@ -34,36 +34,6 @@ class LinkedNodes extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: size * 10,
-              ),
-              child: FittedBox(
-                fit: BoxFit.fitWidth,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.white,
-                  ),
-                  width: mediaQuery.devicePixelRatio * 150,
-                  height: mediaQuery.devicePixelRatio * 10,
-                  margin: EdgeInsets.only(bottom: size * 10),
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      top: mediaQuery.devicePixelRatio * 1,
-                      left: mediaQuery.devicePixelRatio * 4,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.search),
-                        label: Text('Search'),
-                      ),
-                      autofocus: false,
-                    ),
-                  ),
-                ),
-              ),
-            ),
             buildLinkedNodeCard(
               context,
               ListView.builder(
@@ -81,18 +51,37 @@ class LinkedNodes extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               ListTile(
-                                leading:
-                                    Image.asset(DUMMY_PROFILES[index].image),
+                                leading: Image.asset(DUMMY_PROFILES[5].image),
                                 title: Text(
-                                  DUMMY_PROFILES[index].title,
+                                  DUMMY_PROFILES[5].title,
                                   style: TextStyle(color: Colors.white),
                                 ),
-                                subtitle: Text(DUMMY_PROFILES[index].Profession,
+                                subtitle: Text(DUMMY_PROFILES[5].Profession,
                                     style: TextStyle(
                                         color: Color.fromARGB(
                                             255, 166, 166, 166))),
                               ),
                             ],
+                          ),
+                        ),
+                        Positioned(
+                          top: size * 0,
+                          right: size * 25,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                                padding: MaterialStateProperty.all<EdgeInsets>(
+                                    EdgeInsets.zero),
+                                elevation: MaterialStateProperty.all(7),
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.green)),
+                            child: Text(
+                              'Accept',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: mediaQuery.textScaleFactor * 10),
+                            ),
+                            onPressed: () {},
                           ),
                         ),
                         Positioned(
@@ -124,7 +113,7 @@ class LinkedNodes extends StatelessWidget {
                     },
                   ),
                 ),
-                itemCount: DUMMY_PROFILES.length,
+                itemCount: 1,
               ),
             ),
           ],
