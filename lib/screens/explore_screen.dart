@@ -1,14 +1,25 @@
 import 'dart:io';
 
+import 'package:Node/screens/profiles_detail_screen.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 
 class ExploreScreen extends StatelessWidget {
-  Widget buildImageProfile(BuildContext context, Widget child) {
+  Widget buildEventCard(BuildContext context, Widget child) {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 135.111,
+      height: MediaQuery.of(context).devicePixelRatio * 115,
+      width: MediaQuery.of(context).devicePixelRatio * 120,
+      child: child,
+    );
+  }
+
+  Widget buildOptionGrid(BuildContext context, Widget child) {
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
+      padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
+      height: MediaQuery.of(context).devicePixelRatio * 15,
       width: MediaQuery.of(context).devicePixelRatio * 120,
       child: child,
     );
@@ -18,7 +29,7 @@ class ExploreScreen extends StatelessWidget {
     return Container(
       alignment: Alignment.topLeft,
       margin: EdgeInsets.all(
-        MediaQuery.of(context).devicePixelRatio * 5,
+        MediaQuery.of(context).devicePixelRatio * 4,
       ),
       child: Text(text, style: Theme.of(context).textTheme.titleLarge),
     );
@@ -81,7 +92,7 @@ class ExploreScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: size * 10),
+                          padding: EdgeInsets.only(top: size * 5),
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -90,7 +101,7 @@ class ExploreScreen extends StatelessWidget {
                           ),
                           width: mediaQuery.devicePixelRatio * 150,
                           height: mediaQuery.devicePixelRatio * 10,
-                          margin: EdgeInsets.only(bottom: size * 10),
+                          margin: EdgeInsets.only(bottom: size * 5),
                           child: Container(
                             margin: EdgeInsets.only(
                               top: mediaQuery.devicePixelRatio * 1,
@@ -105,8 +116,72 @@ class ExploreScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        buildSectionTitle(context, 'Upcoming Trees'),
-                        buildImageProfile(
+                        Row(
+                          children: [
+                            buildSectionTitle(context, 'Participate'),
+                            SizedBox(
+                              width: size * 50,
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    color: Color.fromARGB(255, 75, 75, 75),
+                                    width: 2),
+                              ),
+                              child: Text(
+                                'See all',
+                                style: TextStyle(
+                                    fontSize: mediaQuery.textScaleFactor * 10,
+                                    color: Color.fromARGB(255, 75, 75, 75)),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                        buildOptionGrid(
+                          context,
+                          ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (ctx, index) => InkWell(
+                              onTap: () {},
+                              child: Card(
+                                elevation: 7,
+                                color: EVENT_TYPES[index].color,
+                                child: OutlinedButton(
+                                  child: Text(
+                                    EVENT_TYPES[index].title,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ),
+                            itemCount: EVENT_TYPES.length,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            buildSectionTitle(context, 'Upcoming Trees'),
+                            SizedBox(
+                              width: size * 34,
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                    color: Color.fromARGB(255, 75, 75, 75),
+                                    width: 2),
+                              ),
+                              child: Text(
+                                'See all',
+                                style: TextStyle(
+                                    fontSize: mediaQuery.textScaleFactor * 10,
+                                    color: Color.fromARGB(255, 75, 75, 75)),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                        buildEventCard(
                           context,
                           ListView.builder(
                             scrollDirection: Axis.vertical,

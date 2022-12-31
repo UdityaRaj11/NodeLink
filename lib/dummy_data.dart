@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'model/matchprofile.dart';
 import 'model/Tree.dart';
+import 'model/e_type.dart';
 
 const DUMMY_PROFILES = const [
   MatchProfile(
@@ -198,4 +199,25 @@ const DUMMY_EVENTS = const [
     ShortDescription:
         'Let us come together, experiance and learn about United Nations Organizations.',
   ),
+];
+
+const EVENT_TYPES = const [
+  e_type(
+      id: 'e1', title: 'Competitions', color: Color.fromARGB(255, 178, 58, 49)),
+  e_type(
+      id: 'e2',
+      title: 'Hiring Challenges',
+      color: Color.fromARGB(255, 1, 89, 160)),
+  e_type(
+      id: 'e3', title: 'Hackathons', color: Color.fromARGB(255, 202, 129, 21)),
+  e_type(id: 'e4', title: 'College Festivals', color: Colors.purple),
+  e_type(id: 'e5', title: 'Workshops', color: Colors.pink),
+  e_type(
+      id: 'e6',
+      title: 'Cultural Events',
+      color: Color.fromARGB(255, 0, 71, 129)),
+  e_type(
+      id: 'e7',
+      title: 'Conferences',
+      color: Color.fromARGB(255, 255, 122, 113)),
 ];
