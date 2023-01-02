@@ -9,8 +9,8 @@ class LinkRequestsScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 220,
-      width: MediaQuery.of(context).devicePixelRatio * 120,
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       child: child,
     );
   }
@@ -19,9 +19,10 @@ class LinkRequestsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final size = mediaQuery.devicePixelRatio;
-    final FSize = mediaQuery.textScaleFactor;
-    final cardWidth = size * 100;
-    final cardHeight = size * 100;
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
+    final cardWidth = deviceWidth;
+    final cardHeight = deviceHeight / 2.6;
     return Scaffold(
       appBar: AppBar(
         title: Text('Link Requests'),
@@ -39,7 +40,7 @@ class LinkRequestsScreen extends StatelessWidget {
               ListView.builder(
                 scrollDirection: Axis.vertical,
                 itemBuilder: (ctx, index) => Container(
-                  height: cardHeight / 3.7,
+                  height: cardHeight / 3.2,
                   width: cardWidth,
                   child: InkWell(
                     child: Stack(
@@ -66,7 +67,7 @@ class LinkRequestsScreen extends StatelessWidget {
                         ),
                         Positioned(
                           top: size * 0,
-                          right: size * 25,
+                          right: cardWidth / 5,
                           child: ElevatedButton(
                             style: ButtonStyle(
                                 padding: MaterialStateProperty.all<EdgeInsets>(
@@ -86,7 +87,7 @@ class LinkRequestsScreen extends StatelessWidget {
                         ),
                         Positioned(
                           top: size * 0,
-                          right: size * 2,
+                          right: cardWidth / 60,
                           child: ElevatedButton(
                             style: ButtonStyle(
                                 padding: MaterialStateProperty.all<EdgeInsets>(

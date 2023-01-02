@@ -9,8 +9,8 @@ class LinkedNodes extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 220,
-      width: MediaQuery.of(context).devicePixelRatio * 120,
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       child: child,
     );
   }
@@ -19,9 +19,10 @@ class LinkedNodes extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final size = mediaQuery.devicePixelRatio;
-    final FSize = mediaQuery.textScaleFactor;
-    final cardWidth = size * 100;
-    final cardHeight = size * 100;
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
+    final cardWidth = deviceWidth;
+    final cardHeight = deviceHeight / 2.6;
     return Scaffold(
       appBar: AppBar(
         title: Text('Linked Nodes'),
@@ -45,8 +46,8 @@ class LinkedNodes extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.white,
                   ),
-                  width: mediaQuery.devicePixelRatio * 150,
-                  height: mediaQuery.devicePixelRatio * 12,
+                  width: deviceWidth,
+                  height: deviceHeight / 25,
                   margin: EdgeInsets.only(bottom: size * 10),
                   child: Container(
                     margin: EdgeInsets.only(
@@ -69,7 +70,7 @@ class LinkedNodes extends StatelessWidget {
               ListView.builder(
                 scrollDirection: Axis.vertical,
                 itemBuilder: (ctx, index) => Container(
-                  height: cardHeight / 3.7,
+                  height: cardHeight / 3.2,
                   width: cardWidth,
                   child: InkWell(
                     child: Stack(
@@ -96,7 +97,7 @@ class LinkedNodes extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          top: size * 0,
+                          top: cardHeight / 20,
                           right: size * 2,
                           child: ElevatedButton(
                             style: ButtonStyle(

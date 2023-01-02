@@ -8,8 +8,10 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).devicePixelRatio;
+    final mediaQuery = MediaQuery.of(context);
     final textsize = MediaQuery.of(context).textScaleFactor;
-    final profileId = ModalRoute.of(context).settings.arguments as String;
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
     final selectedProfile = USER_PROFILE;
     return Scaffold(
       appBar: AppBar(
@@ -18,11 +20,12 @@ class UserProfile extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Stack(
               children: [
                 Container(
-                  height: size * 150,
+                  height: deviceHeight / 2,
                   child: Card(
                     color: Color.fromARGB(255, 29, 29, 29),
                     elevation: 7,
@@ -30,21 +33,21 @@ class UserProfile extends StatelessWidget {
                       children: [
                         Positioned(
                           child: Container(
-                            margin: EdgeInsets.only(bottom: size * 70),
+                            height: deviceHeight / 2,
+                            margin: EdgeInsets.only(bottom: deviceHeight / 4),
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(selectedProfile.coverimage),
                                   opacity: 100,
                                   fit: BoxFit.cover),
                             ),
-                            height: size * 80,
                             width: double.infinity,
                             child: Text(''),
                           ),
                         ),
                         Positioned(
-                          bottom: size * 75,
-                          right: size * 5,
+                          bottom: deviceHeight / 3.7,
+                          right: deviceWidth / 25,
                           child: InkWell(
                             child: Icon(
                               Icons.edit,
@@ -58,13 +61,13 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 55,
-                  left: size * 5,
+                  bottom: deviceHeight / 5,
+                  left: deviceWidth / 25,
                   child: Stack(
                     children: [
                       Container(
-                        height: size * 35,
-                        width: size * 35,
+                        height: deviceHeight / 8,
+                        width: deviceWidth / 3.7,
                         child: ClipRRect(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(4),
@@ -91,8 +94,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 53,
-                  right: size * 10,
+                  bottom: deviceHeight / 5,
+                  right: deviceWidth / 25,
                   child: Text(
                     selectedProfile.Profession,
                     style:
@@ -100,8 +103,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 44,
-                  right: size * 10,
+                  bottom: deviceHeight / 6,
+                  right: deviceWidth / 25,
                   child: Text(
                     selectedProfile.Education,
                     style: TextStyle(
@@ -110,8 +113,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 37,
-                  right: size * 10,
+                  bottom: deviceHeight / 7,
+                  right: deviceWidth / 25,
                   child: Text(
                     selectedProfile.City + ',' + ' ' + selectedProfile.Country,
                     style: TextStyle(
@@ -120,8 +123,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 43,
-                  left: size * 10,
+                  bottom: deviceHeight / 6.5,
+                  left: deviceWidth / 15,
                   child: Text(
                     selectedProfile.title,
                     style: TextStyle(
@@ -131,11 +134,12 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 25,
-                  left: size * 10,
-                  child: Container(
-                    width: size * 100,
-                    child: FittedBox(
+                  bottom: deviceHeight / 10,
+                  left: deviceWidth / 12.5,
+                  child: FittedBox(
+                    fit: BoxFit.contain,
+                    child: Container(
+                      width: deviceWidth,
                       child: Text(
                         selectedProfile.Headline,
                         style: TextStyle(
@@ -146,8 +150,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 8,
-                  left: size * 10,
+                  bottom: deviceHeight / 50,
+                  left: deviceWidth / 25,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all(7),
@@ -172,8 +176,8 @@ class UserProfile extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: size * 8,
-                  left: size * 65,
+                  bottom: deviceHeight / 50,
+                  left: deviceWidth / 2.2,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(
@@ -203,18 +207,20 @@ class UserProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 40,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "About",
@@ -222,9 +228,6 @@ class UserProfile extends StatelessWidget {
                                 color: Color.fromARGB(255, 240, 240, 240),
                                 fontSize: textsize * 15,
                                 fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: size * 80,
                           ),
                           InkWell(
                             child: Text(
@@ -237,9 +240,6 @@ class UserProfile extends StatelessWidget {
                             onTap: () {},
                           ),
                         ],
-                      ),
-                      const SizedBox(
-                        height: 12,
                       ),
                       Text(
                         selectedProfile.about,
@@ -254,18 +254,20 @@ class UserProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 35,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Skills",
@@ -273,9 +275,6 @@ class UserProfile extends StatelessWidget {
                                 color: Color.fromARGB(255, 240, 240, 240),
                                 fontSize: textsize * 15,
                                 fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: size * 80,
                           ),
                           InkWell(
                             child: Text(
@@ -289,13 +288,10 @@ class UserProfile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -311,7 +307,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -327,7 +322,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -343,7 +337,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -359,7 +352,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -383,18 +375,20 @@ class UserProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 35,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "Interests",
@@ -402,9 +396,6 @@ class UserProfile extends StatelessWidget {
                                 color: Color.fromARGB(255, 240, 240, 240),
                                 fontSize: textsize * 15,
                                 fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: size * 70,
                           ),
                           InkWell(
                             child: Text(
@@ -418,13 +409,10 @@ class UserProfile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 12,
-                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -440,7 +428,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -456,7 +443,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -472,7 +458,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),
@@ -488,7 +473,6 @@ class UserProfile extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: size * 2),
                             child: Card(
                               elevation: 7,
                               color: Color.fromARGB(255, 29, 29, 29),

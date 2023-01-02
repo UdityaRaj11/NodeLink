@@ -30,8 +30,11 @@ class ProfileDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     final size = MediaQuery.of(context).devicePixelRatio;
     final textsize = MediaQuery.of(context).textScaleFactor;
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
     final profileId = ModalRoute.of(context).settings.arguments as String;
     final selectedProfile = DUMMY_PROFILES
         .lastWhere((matchedProfile) => matchedProfile.id == profileId);
@@ -42,141 +45,149 @@ class ProfileDetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Stack(
-              children: [
-                Container(
-                  height: size * 150,
-                  child: Card(
-                    color: Color.fromARGB(255, 29, 29, 29),
-                    elevation: 7,
+            Container(
+              height: deviceHeight / 2,
+              child: Stack(
+                children: [
+                  Container(
+                    height: deviceHeight / 2,
+                    child: Card(
+                      color: Color.fromARGB(255, 29, 29, 29),
+                      elevation: 7,
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: deviceHeight / 4),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(selectedProfile.coverimage),
+                              opacity: 100,
+                              fit: BoxFit.cover),
+                        ),
+                        width: double.infinity,
+                        child: Text(''),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: deviceHeight / 5,
+                    left: deviceWidth / 25,
                     child: Container(
-                      margin: EdgeInsets.only(bottom: size * 70),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(selectedProfile.coverimage),
-                            opacity: 100,
-                            fit: BoxFit.cover),
-                      ),
-                      height: size * 50,
-                      width: double.infinity,
-                      child: Text(''),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: size * 55,
-                  left: size * 5,
-                  child: Container(
-                    height: size * 35,
-                    width: size * 35,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(4),
-                        topRight: Radius.circular(4),
-                      ),
-                      child: Image.asset(
-                        selectedProfile.image,
-                        fit: BoxFit.cover,
+                      height: deviceHeight / 8,
+                      width: deviceWidth / 3.7,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(4),
+                          topRight: Radius.circular(4),
+                        ),
+                        child: Image.asset(
+                          selectedProfile.image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Positioned(
-                  bottom: size * 53,
-                  right: size * 10,
-                  child: Text(
-                    selectedProfile.Profession,
-                    style:
-                        TextStyle(color: Colors.blue, fontSize: textsize * 20),
+                  Positioned(
+                    bottom: deviceHeight / 5,
+                    right: deviceWidth / 25,
+                    child: Text(
+                      selectedProfile.Profession,
+                      style: TextStyle(
+                          color: Colors.blue, fontSize: textsize * 20),
+                    ),
                   ),
-                ),
-                Positioned(
-                  bottom: size * 44,
-                  right: size * 10,
-                  child: Text(
-                    selectedProfile.Education,
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 226, 226, 226),
-                        fontSize: textsize * 14),
+                  Positioned(
+                    bottom: deviceHeight / 6,
+                    right: deviceWidth / 25,
+                    child: Text(
+                      selectedProfile.Education,
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 226, 226, 226),
+                          fontSize: textsize * 14),
+                    ),
                   ),
-                ),
-                Positioned(
-                  bottom: size * 37,
-                  right: size * 10,
-                  child: Text(
-                    selectedProfile.City + ',' + ' ' + selectedProfile.Country,
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 172, 172, 172),
-                        fontSize: textsize * 12),
+                  Positioned(
+                    bottom: deviceHeight / 7,
+                    right: deviceWidth / 25,
+                    child: Text(
+                      selectedProfile.City +
+                          ',' +
+                          ' ' +
+                          selectedProfile.Country,
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 172, 172, 172),
+                          fontSize: textsize * 12),
+                    ),
                   ),
-                ),
-                Positioned(
-                  bottom: size * 43,
-                  left: size * 10,
-                  child: Text(
-                    selectedProfile.title,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: textsize * 18,
-                        fontWeight: FontWeight.bold),
+                  Positioned(
+                    bottom: deviceHeight / 6.5,
+                    left: deviceWidth / 15,
+                    child: Text(
+                      selectedProfile.title,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: textsize * 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-                Positioned(
-                  bottom: size * 25,
-                  left: size * 10,
-                  child: Container(
-                    width: size * 100,
+                  Positioned(
+                    bottom: deviceHeight / 10,
+                    left: deviceWidth / 12.5,
                     child: FittedBox(
-                      child: Text(
-                        selectedProfile.Headline,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 240, 240, 240),
-                            fontSize: textsize * 15),
+                      fit: BoxFit.contain,
+                      child: Container(
+                        width: deviceWidth,
+                        child: Text(
+                          selectedProfile.Headline,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 240, 240, 240),
+                              fontSize: textsize * 12),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Positioned(
-                    bottom: size * 8,
-                    left: size * 10,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          elevation: MaterialStateProperty.all(7),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.green)),
-                      child: Text(
-                        'Link',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {},
-                    )),
-                Positioned(
-                    bottom: size * 8,
-                    left: size * 40,
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                            color: Color.fromARGB(255, 75, 75, 75), width: 2),
-                      ),
-                      child: Text(
-                        'Message',
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
-                      ),
-                      onPressed: () {},
-                    )),
-              ],
+                  Positioned(
+                      bottom: deviceHeight / 50,
+                      left: deviceWidth / 25,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.all(7),
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.green)),
+                        child: Text(
+                          'Link',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {},
+                      )),
+                  Positioned(
+                      bottom: deviceHeight / 50,
+                      left: deviceWidth / 3.5,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          side: BorderSide(
+                              color: Color.fromARGB(255, 75, 75, 75), width: 2),
+                        ),
+                        child: Text(
+                          'Message',
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
+                        ),
+                        onPressed: () {},
+                      )),
+                ],
+              ),
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 40,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
                 child: Container(
                   padding: const EdgeInsets.all(10),
+                  height: deviceHeight / 7,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
@@ -204,8 +215,8 @@ class ProfileDetailScreen extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 35,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
@@ -226,6 +237,7 @@ class ProfileDetailScreen extends StatelessWidget {
                         height: 12,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
                             margin: EdgeInsets.only(left: size * 2),
@@ -316,8 +328,8 @@ class ProfileDetailScreen extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: size * 2),
-              height: size * 35,
-              width: size * 150,
+              height: deviceHeight / 7,
+              width: deviceWidth,
               child: Card(
                 color: Color.fromARGB(255, 29, 29, 29),
                 elevation: 7,
@@ -338,6 +350,7 @@ class ProfileDetailScreen extends StatelessWidget {
                         height: 12,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
                             margin: EdgeInsets.only(left: size * 2),

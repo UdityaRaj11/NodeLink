@@ -7,6 +7,8 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final size = mediaQuery.devicePixelRatio;
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
     return Scaffold(
         body: SingleChildScrollView(
       scrollDirection: Axis.vertical,
@@ -54,7 +56,7 @@ class NotificationScreen extends StatelessWidget {
                 ),
                 Positioned(
                   top: size * 0,
-                  right: size * 25,
+                  right: deviceWidth / 5,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
@@ -73,7 +75,7 @@ class NotificationScreen extends StatelessWidget {
                 ),
                 Positioned(
                   top: size * 0,
-                  right: size * 2,
+                  right: deviceWidth / 60,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
@@ -124,7 +126,7 @@ class NotificationScreen extends StatelessWidget {
                 ),
                 Positioned(
                   top: size * 0,
-                  right: size * 25,
+                  right: deviceWidth / 5,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(
@@ -143,7 +145,7 @@ class NotificationScreen extends StatelessWidget {
                 ),
                 Positioned(
                   top: size * 0,
-                  right: size * 2,
+                  right: deviceWidth / 60,
                   child: ElevatedButton(
                     style: ButtonStyle(
                         padding: MaterialStateProperty.all<EdgeInsets>(

@@ -6,8 +6,8 @@ class ExploreScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 115,
-      width: MediaQuery.of(context).devicePixelRatio * 120,
+      height: MediaQuery.of(context).size.height / 2.5,
+      width: MediaQuery.of(context).size.width,
       child: child,
     );
   }
@@ -16,8 +16,8 @@ class ExploreScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 15,
-      width: MediaQuery.of(context).devicePixelRatio * 120,
+      height: MediaQuery.of(context).size.height / 20,
+      width: MediaQuery.of(context).size.width,
       child: child,
     );
   }
@@ -26,8 +26,8 @@ class ExploreScreen extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(1000)),
       padding: EdgeInsets.all(MediaQuery.of(context).devicePixelRatio * 1),
-      height: MediaQuery.of(context).devicePixelRatio * 50,
-      width: MediaQuery.of(context).devicePixelRatio * 120,
+      height: MediaQuery.of(context).size.height / 5,
+      width: MediaQuery.of(context).size.width,
       child: child,
     );
   }
@@ -45,10 +45,12 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final deviceWidth = mediaQuery.size.width;
+    final deviceHeight = mediaQuery.size.height;
     final size = mediaQuery.devicePixelRatio;
     final FSize = mediaQuery.textScaleFactor;
-    final cardWidth = size * 100;
-    final cardHeight = size * 100;
+    final cardWidth = mediaQuery.size.width;
+    final cardHeight = mediaQuery.size.height / 2.5;
     return Scaffold(
       body: Column(
         children: [
@@ -108,8 +110,8 @@ class ExploreScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(50),
                                 color: Colors.white,
                               ),
-                              width: mediaQuery.devicePixelRatio * 150,
-                              height: mediaQuery.devicePixelRatio * 10,
+                              width: deviceWidth,
+                              height: deviceHeight / 25,
                               margin: EdgeInsets.only(bottom: size * 5),
                               child: Container(
                                 margin: EdgeInsets.only(
@@ -125,28 +127,33 @@ class ExploreScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Row(
-                              children: [
-                                buildSectionTitle(context, 'My Registrations'),
-                                SizedBox(
-                                  width: size * 32,
-                                ),
-                                OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                        color: Color.fromARGB(255, 75, 75, 75),
-                                        width: 2),
+                            Container(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  buildSectionTitle(
+                                      context, 'My Registrations'),
+                                  OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      side: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75),
+                                          width: 2),
+                                    ),
+                                    child: Text(
+                                      'See all',
+                                      style: TextStyle(
+                                          fontSize:
+                                              mediaQuery.textScaleFactor * 10,
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75)),
+                                    ),
+                                    onPressed: () {},
                                   ),
-                                  child: Text(
-                                    'See all',
-                                    style: TextStyle(
-                                        fontSize:
-                                            mediaQuery.textScaleFactor * 10,
-                                        color: Color.fromARGB(255, 75, 75, 75)),
-                                  ),
-                                  onPressed: () {},
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             buildRegisteredTile(
                               context,
@@ -188,28 +195,32 @@ class ExploreScreen extends StatelessWidget {
                                 itemCount: 1,
                               ),
                             ),
-                            Row(
-                              children: [
-                                buildSectionTitle(context, 'Participate'),
-                                SizedBox(
-                                  width: size * 50,
-                                ),
-                                OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                        color: Color.fromARGB(255, 75, 75, 75),
-                                        width: 2),
+                            Container(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  buildSectionTitle(context, 'Participate'),
+                                  OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      side: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75),
+                                          width: 2),
+                                    ),
+                                    child: Text(
+                                      'See all',
+                                      style: TextStyle(
+                                          fontSize:
+                                              mediaQuery.textScaleFactor * 10,
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75)),
+                                    ),
+                                    onPressed: () {},
                                   ),
-                                  child: Text(
-                                    'See all',
-                                    style: TextStyle(
-                                        fontSize:
-                                            mediaQuery.textScaleFactor * 10,
-                                        color: Color.fromARGB(255, 75, 75, 75)),
-                                  ),
-                                  onPressed: () {},
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             buildOptionGrid(
                               context,
@@ -232,28 +243,32 @@ class ExploreScreen extends StatelessWidget {
                                 itemCount: EVENT_TYPES.length,
                               ),
                             ),
-                            Row(
-                              children: [
-                                buildSectionTitle(context, 'Upcoming Trees'),
-                                SizedBox(
-                                  width: size * 34,
-                                ),
-                                OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    side: BorderSide(
-                                        color: Color.fromARGB(255, 75, 75, 75),
-                                        width: 2),
+                            Container(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  buildSectionTitle(context, 'Upcoming Trees'),
+                                  OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      side: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75),
+                                          width: 2),
+                                    ),
+                                    child: Text(
+                                      'See all',
+                                      style: TextStyle(
+                                          fontSize:
+                                              mediaQuery.textScaleFactor * 10,
+                                          color:
+                                              Color.fromARGB(255, 75, 75, 75)),
+                                    ),
+                                    onPressed: () {},
                                   ),
-                                  child: Text(
-                                    'See all',
-                                    style: TextStyle(
-                                        fontSize:
-                                            mediaQuery.textScaleFactor * 10,
-                                        color: Color.fromARGB(255, 75, 75, 75)),
-                                  ),
-                                  onPressed: () {},
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             buildEventCard(
                               context,
@@ -289,8 +304,8 @@ class ExploreScreen extends StatelessWidget {
                                             ),
                                             Container(
                                               margin: EdgeInsets.only(
-                                                  top: size * 60),
-                                              width: size * 120,
+                                                  top: cardHeight / 1.7),
+                                              width: cardWidth,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: <Widget>[
