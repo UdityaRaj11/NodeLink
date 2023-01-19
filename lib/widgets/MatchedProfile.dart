@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:Node/dummy_data.dart';
 import '../screens/profiles_detail_screen.dart';
 
 class MatchedProfile extends StatelessWidget {
@@ -15,18 +14,19 @@ class MatchedProfile extends StatelessWidget {
   final String Interest2;
   final Color color;
 
-  MatchedProfile(
-      {@required this.id,
-      @required this.title,
-      @required this.image,
-      @required this.Profession,
-      @required this.Skill1,
-      @required this.Skill3,
-      @required this.Skill2,
-      @required this.Interest1,
-      @required this.Interest3,
-      @required this.Interest2,
-      this.color});
+  MatchedProfile({
+    @required this.id,
+    @required this.title,
+    @required this.image,
+    @required this.Profession,
+    @required this.Skill1,
+    @required this.Skill3,
+    @required this.Skill2,
+    @required this.Interest1,
+    @required this.Interest3,
+    @required this.Interest2,
+    this.color,
+  });
 
   void selectProfile(BuildContext context) {
     Navigator.of(context).pushNamed(
@@ -88,9 +88,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 title,
                                 style: TextStyle(
-                                    fontSize: mediaQuery.textScaleFactor * 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                  fontSize: mediaQuery.textScaleFactor * 12,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                                 softWrap: true,
                                 overflow: TextOverflow.fade,
                               ),
@@ -100,9 +101,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Profession,
                                 style: TextStyle(
-                                    fontSize: mediaQuery.textScaleFactor * 9,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                  fontSize: mediaQuery.textScaleFactor * 9,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                                 softWrap: true,
                                 overflow: TextOverflow.fade,
                               ),
@@ -153,9 +155,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Skill1,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -175,9 +178,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Skill2,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -197,9 +201,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Skill3,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -240,9 +245,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Interest1,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -262,9 +268,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Interest2,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
@@ -282,9 +289,10 @@ class MatchedProfile extends StatelessWidget {
                               child: Text(
                                 Interest3,
                                 style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: mediaQuery.textScaleFactor * 10,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.grey,
+                                  fontSize: mediaQuery.textScaleFactor * 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),

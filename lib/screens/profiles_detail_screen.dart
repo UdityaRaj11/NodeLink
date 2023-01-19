@@ -1,5 +1,3 @@
-import 'package:Node/model/matchprofile.dart';
-
 import '../dummy_data.dart';
 import 'package:flutter/material.dart';
 

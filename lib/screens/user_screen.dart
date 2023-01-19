@@ -143,8 +143,9 @@ class UserProfile extends StatelessWidget {
                       child: Text(
                         selectedProfile.Headline,
                         style: TextStyle(
-                            color: Color.fromARGB(255, 240, 240, 240),
-                            fontSize: textsize * 15),
+                          color: Color.fromARGB(255, 240, 240, 240),
+                          fontSize: textsize * 15,
+                        ),
                       ),
                     ),
                   ),
@@ -181,25 +182,31 @@ class UserProfile extends StatelessWidget {
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(
-                          color: Color.fromARGB(255, 75, 75, 75), width: 2),
+                        color: Color.fromARGB(255, 75, 75, 75),
+                        width: 2,
+                      ),
                     ),
                     child: Column(
                       children: [
                         Text(
                           '1',
                           style: TextStyle(
-                              color: Color.fromARGB(255, 68, 157, 71)),
+                            color: Color.fromARGB(255, 68, 157, 71),
+                          ),
                         ),
                         Text(
                           'Link Requests',
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 75, 75, 75)),
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 75, 75, 75),
+                          ),
                         ),
                       ],
                     ),
                     onPressed: () {
                       Navigator.pushNamed(
-                          context, LinkRequestsScreen.routeName);
+                        context,
+                        LinkRequestsScreen.routeName,
+                      );
                     },
                   ),
                 ),
@@ -225,17 +232,19 @@ class UserProfile extends StatelessWidget {
                           Text(
                             "About",
                             style: TextStyle(
-                                color: Color.fromARGB(255, 240, 240, 240),
-                                fontSize: textsize * 15,
-                                fontWeight: FontWeight.bold),
+                              color: Color.fromARGB(255, 240, 240, 240),
+                              fontSize: textsize * 15,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           InkWell(
                             child: Text(
                               "Edit",
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 113, 113, 113),
-                                  fontSize: textsize * 11,
-                                  fontWeight: FontWeight.bold),
+                                color: Color.fromARGB(255, 113, 113, 113),
+                                fontSize: textsize * 11,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             onTap: () {},
                           ),
@@ -244,8 +253,9 @@ class UserProfile extends StatelessWidget {
                       Text(
                         selectedProfile.about,
                         style: TextStyle(
-                            color: Color.fromARGB(255, 173, 173, 173),
-                            fontSize: textsize * 12),
+                          color: Color.fromARGB(255, 173, 173, 173),
+                          fontSize: textsize * 12,
+                        ),
                       ),
                     ],
                   ),
@@ -272,17 +282,19 @@ class UserProfile extends StatelessWidget {
                           Text(
                             "Skills",
                             style: TextStyle(
-                                color: Color.fromARGB(255, 240, 240, 240),
-                                fontSize: textsize * 15,
-                                fontWeight: FontWeight.bold),
+                              color: Color.fromARGB(255, 240, 240, 240),
+                              fontSize: textsize * 15,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           InkWell(
                             child: Text(
                               "Edit",
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 113, 113, 113),
-                                  fontSize: textsize * 11,
-                                  fontWeight: FontWeight.bold),
+                                color: Color.fromARGB(255, 113, 113, 113),
+                                fontSize: textsize * 11,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             onTap: () {},
                           ),
@@ -300,8 +312,9 @@ class UserProfile extends StatelessWidget {
                                 child: Text(
                                   selectedProfile.Skill1,
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
+                                    color: Color.fromARGB(255, 173, 173, 173),
+                                    fontSize: textsize * 12,
+                                  ),
                                 ),
                               ),
                             ),
@@ -315,8 +328,9 @@ class UserProfile extends StatelessWidget {
                                 child: Text(
                                   selectedProfile.Skill2,
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
+                                    color: Color.fromARGB(255, 173, 173, 173),
+                                    fontSize: textsize * 12,
+                                  ),
                                 ),
                               ),
                             ),
@@ -351,20 +365,25 @@ class UserProfile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Skill5,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Skill1,
+                            textsize: textsize,
+                          ),
+                          MyCard(
+                            text: selectedProfile.Skill2,
+                            textsize: textsize,
+                          ),
+                          MyCard(
+                            text: selectedProfile.Skill5,
+                            textsize: textsize,
+                          ),
+                          MyCard(
+                            text: selectedProfile.Skill5,
+                            textsize: textsize,
+                          ),
+                          MyCard(
+                            text: selectedProfile.Skill5,
+                            textsize: textsize,
                           ),
                         ],
                       ),
@@ -412,80 +431,25 @@ class UserProfile extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Interest1,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Interest1,
+                            textsize: textsize,
                           ),
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Interest2,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Interest2,
+                            textsize: textsize,
                           ),
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Interest3,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Interest3,
+                            textsize: textsize,
                           ),
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Interest4,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Interest4,
+                            textsize: textsize,
                           ),
-                          Container(
-                            child: Card(
-                              elevation: 7,
-                              color: Color.fromARGB(255, 29, 29, 29),
-                              child: FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  selectedProfile.Interest5,
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 173, 173, 173),
-                                      fontSize: textsize * 12),
-                                ),
-                              ),
-                            ),
+                          MyCard(
+                            text: selectedProfile.Interest5,
+                            textsize: textsize,
                           ),
                         ],
                       ),
@@ -501,6 +465,37 @@ class UserProfile extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 145, 145, 145),
         child: Icon(Icons.settings),
         onPressed: () {},
+      ),
+    );
+  }
+}
+
+class MyCard extends StatelessWidget {
+  const MyCard({
+    Key key,
+    @required this.text,
+    @required this.textsize,
+  }) : super(key: key);
+
+  final String text;
+  final double textsize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Card(
+        elevation: 7,
+        color: Color.fromARGB(255, 29, 29, 29),
+        child: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Color.fromARGB(255, 173, 173, 173),
+              fontSize: textsize * 12,
+            ),
+          ),
+        ),
       ),
     );
   }

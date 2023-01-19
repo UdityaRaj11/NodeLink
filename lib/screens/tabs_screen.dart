@@ -1,8 +1,6 @@
-import 'package:Node/screens/profiles_detail_screen.dart';
 import 'package:Node/screens/user_screen.dart';
 
 import 'explore_screen.dart';
-import '../model/e_type.dart';
 import 'notification_screen.dart';
 import 'chats_screen.dart';
 import 'nodes_screen.dart';

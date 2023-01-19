@@ -1,5 +1,4 @@
 import 'package:Node/screens/profiles_detail_screen.dart';
-import 'package:Node/screens/user_screen.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 

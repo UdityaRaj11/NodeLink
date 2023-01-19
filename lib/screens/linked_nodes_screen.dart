@@ -1,5 +1,4 @@
 import 'package:Node/screens/profiles_detail_screen.dart';
-import 'package:Node/screens/user_screen.dart';
 import 'package:flutter/material.dart';
 import '../dummy_data.dart';
 
@@ -88,10 +87,17 @@ class LinkedNodes extends StatelessWidget {
                                   DUMMY_PROFILES[index].title,
                                   style: TextStyle(color: Colors.white),
                                 ),
-                                subtitle: Text(DUMMY_PROFILES[index].Profession,
-                                    style: TextStyle(
-                                        color: Color.fromARGB(
-                                            255, 166, 166, 166))),
+                                subtitle: Text(
+                                  DUMMY_PROFILES[index].Profession,
+                                  style: TextStyle(
+                                    color: Color.fromARGB(
+                                      255,
+                                      166,
+                                      166,
+                                      166,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -120,8 +126,10 @@ class LinkedNodes extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.pushNamed(
-                          context, ProfileDetailScreen.routeName,
-                          arguments: DUMMY_PROFILES[index].id);
+                        context,
+                        ProfileDetailScreen.routeName,
+                        arguments: DUMMY_PROFILES[index].id,
+                      );
                     },
                   ),
                 ),

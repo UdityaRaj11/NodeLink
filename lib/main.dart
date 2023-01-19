@@ -37,11 +37,11 @@ class _MyAppState extends State<MyApp> {
             ),
       ),
       routes: {
-        '/': (ctx) => TabsScreen(),
-        ProfileDetailScreen.routeName: (ctx) => ProfileDetailScreen(),
-        LinkedNodes.routeName: (ctx) => LinkedNodes(),
-        UserProfile.routeName: (ctx) => UserProfile(),
-        LinkRequestsScreen.routeName: (ctx) => LinkRequestsScreen(),
+        '/': (_) => TabsScreen(),
+        ProfileDetailScreen.routeName: (_) => ProfileDetailScreen(),
+        LinkedNodes.routeName: (_) => LinkedNodes(),
+        UserProfile.routeName: (_) => UserProfile(),
+        LinkRequestsScreen.routeName: (_) => LinkRequestsScreen(),
       },
     );
   }
