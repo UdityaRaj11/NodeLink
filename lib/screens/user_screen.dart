@@ -37,9 +37,10 @@ class UserProfile extends StatelessWidget {
                             margin: EdgeInsets.only(bottom: deviceHeight / 4),
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(selectedProfile.coverimage),
-                                  opacity: 100,
-                                  fit: BoxFit.cover),
+                                image: AssetImage(selectedProfile.coverimage),
+                                opacity: 100,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                             width: double.infinity,
                             child: Text(''),
